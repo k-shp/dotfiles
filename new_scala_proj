@@ -1,0 +1,27 @@
+#!/bin/sh
+mkdir -p src/{main,test}/{resources,scala}
+mkdir lib project target
+
+# create an initial build.sbt file
+echo 'name := "MySbtProject"
+version := "1.0"
+scalaVersion := "2.13.0"
+libraryDependencies ++= Seq(
+  "org.scalactic" %% "scalactic" % "3.1.0",
+  "org.scalatest" %% "scalatest" % "3.1.0" % "test"
+)' > build.sbt
+
+echo 'object HelloWorld {
+  def main(args: Array[String]): Unit = {
+    println("Hello, World!")
+  }
+}' > src/main/scala/App.scala
+
+echo 'import org.scalatest.WordSpec
+class HelloWorldSpec extends WordSpec {
+  "HelloWorld" should {
+     "return true" in {
+        1 == 1
+    }
+  }
+}' > src/test/scala/AppSpec.scala
