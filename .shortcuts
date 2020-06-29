@@ -23,3 +23,7 @@ alias gpsh="git push"
 
 # sbt
 alias new_scala_proj="bash new_scala_proj"
+alias sc="sbt compile"
+alias st="sbt test"
+function sto { sbt "test:testOnly *$1"; }
+export -f sto

@@ -3,7 +3,7 @@ mkdir -p src/{main,test}/{resources,scala}
 mkdir lib project target
 
 # create an initial build.sbt file
-echo 'name := "MySbtProject"
+echo 'name := "HelloWorld"
 version := "1.0"
 scalaVersion := "2.13.0"
 libraryDependencies ++= Seq(
@@ -15,7 +15,7 @@ echo 'object HelloWorld {
   def main(args: Array[String]): Unit = {
     println("Hello, World!")
   }
-}' > src/main/scala/App.scala
+}' > src/main/scala/HelloWorld.scala
 
 echo 'import org.scalatest.WordSpec
 class HelloWorldSpec extends WordSpec {
@@ -24,4 +24,4 @@ class HelloWorldSpec extends WordSpec {
         1 == 1
     }
   }
-}' > src/test/scala/AppSpec.scala
+}' > src/test/scala/HellowWorld.scala
